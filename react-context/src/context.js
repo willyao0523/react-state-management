@@ -6,3 +6,5 @@ export const CountStateContext = createContext({
 })
 
 export const ColorContext = createContext('black');
+
+export const CountContext = createContext({ count1: 0, count2: 0 });
