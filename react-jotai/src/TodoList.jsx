@@ -1,36 +1,23 @@
 import { useAtom } from "jotai";
-import { todosAtom } from "./context";
 import { useCallback } from "react";
 import MemoedTodoItem from "./TodoItem";
+import { todoAtomsAtom } from "./context";
 
 const TodoList = () => {
-  const [todos, setTodos] = useAtom(todosAtom);
-  const removeTodo = useCallback(
-    (id) => setTodos((prev) => prev.filter((item) => item.id !== id)),
-    [setTodos]
+  const [todoAtoms, setTodoAtoms] = useAtom(todoAtomsAtom);
+  const remove = useCallback(
+    (todoAtom) =>
+      setTodoAtoms((prev) => prev.filter((item) => item !== todoAtom)),
+    [setTodoAtoms]
   );
-  const toggleTodo = useCallback(
-    (id) =>
-      setTodos((prev) =>
-        prev.map((item) =>
-          item.id === id
-            ? {
-                ...item,
-                done: !item.todo,
-              }
-            : item
-        )
-      ),
-    [setTodos]
-  );
+
   return (
     <div>
-      {todos.map((todo) => (
+      {todoAtoms.map((todoAtom) => (
         <MemoedTodoItem
-          key={todo.id}
-          todo={todo}
-          removeTodo={removeTodo}
-          toggleTodo={toggleTodo}
+          key={`${todoAtom}`}
+          todoAtom={todoAtom}
+          remove={remove}
         />
       ))}
     </div>

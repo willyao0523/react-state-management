@@ -7,6 +7,7 @@ import Counter1 from "./count1";
 import Counter2 from "./count2";
 import TodoList from "./TodoList";
 import NewTodo from "./NewTodo";
+import IncrementButton from "./IncrementButton";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
       <br />
       <TodoList />
       <NewTodo />
+      <IncrementButton />
     </>
   );
 }

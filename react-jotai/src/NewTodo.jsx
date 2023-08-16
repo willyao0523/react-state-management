@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { todosAtom } from "./context";
-import { useAtom } from "jotai";
-import { nanoid } from "nanoid";
+import { todoAtomsAtom } from "./context";
+import { atom, useAtom } from "jotai";
 
 const NewTodo = () => {
-  const [, setTodos] = useAtom(todosAtom);
+  const [, setTodoAtoms] = useAtom(todoAtomsAtom);
   const [text, setText] = useState("");
   const onClick = () => {
-    setTodos((prev) => [...prev, { id: nanoid(), title: text, done: false }]);
+    setTodoAtoms((prev) => [...prev, atom({ title: text, done: false })]);
     setText("");
   };
   return (
