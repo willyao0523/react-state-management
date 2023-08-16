@@ -1,3 +1,6 @@
 import {createContext} from "react";
 
-export const ColorContext = createContext('black')
+export const CountStateContext = createContext({
+    count: 0,
+    setCount: () => {}
+})
