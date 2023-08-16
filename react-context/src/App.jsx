@@ -1,15 +1,12 @@
-import {Count1Provider, Count2Provider} from "./context.jsx"
 import Parent from "./Parent.jsx";
+import Provider from "./Provider.jsx";
 
 
 function App() {
-
     return (
-    <Count1Provider>
-        <Count2Provider>
-            <Parent/>
-        </Count2Provider>
-    </Count1Provider>
+        <Provider>
+            <Parent />
+        </Provider>
     );
 }
 

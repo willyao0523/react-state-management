@@ -1,15 +1,15 @@
 import {useContext} from "react";
-import {Count2Context} from "./context.jsx"
+import {Count2Context, DispatchContext} from "./context.jsx"
 
 const Counter2 = () => {
-    const [count2, setCount2] = useContext(Count2Context);
+    const count2 = useContext(Count2Context);
+    const dispatch = useContext(DispatchContext);
     return (
         <div>
             Count2: {count2}
-            <button onClick={() => setCount2((c) => c + 1)}>
-                +1
-            </button>
-        </div>);
+            <button onClick={() => dispatch({ type: "INC2" })}>
+                +1 </button>
+        </div> );
 };
 
 export default Counter2;

@@ -35,3 +35,5 @@ export const Count2Provider = ({
         </Count2Context.Provider>
     );
 }
+
+export const DispatchContext = createContext(()=> {});
