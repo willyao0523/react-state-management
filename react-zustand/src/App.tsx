@@ -1,13 +1,11 @@
-import Counter1 from "./count1";
-import Counter2 from "./count2";
-import Total from "./total";
+import NewTodo from "./NewTodo";
+import TodoList from "./TodoList";
 
 function App() {
   return (
     <>
-      <Counter1 />
-      <Counter2 />
-      <Total />
+      <TodoList />
+      <NewTodo />
     </>
   );
 }
