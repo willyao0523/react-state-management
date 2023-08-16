@@ -1,19 +1,28 @@
-import useStore from "./useStore";
+import { useMemo } from "react";
 import { store } from "./createStore";
 
+import { useSubscription } from "use-subscription";
+
 const Component1 = () => {
-  const [state, setState] = useStore(store);
+  const state = useSubscription(
+    useMemo(
+      () => ({
+        getCurrentValue: () => store.getState().count1,
+        subscribe: store.subscribe,
+      }),
+      []
+    )
+  );
   const inc = () => {
-    setState((prev) => ({
+    store.setState((prev) => ({
       ...prev,
-      count: prev.count + 1,
+      count1: prev.count1 + 1,
     }));
   };
   return (
     <div>
-      {state.count} <button onClick={inc}>+1</button>
+      count1: {state} <button onClick={inc}>+1</button>
     </div>
   );
 };
-
 export default Component1;

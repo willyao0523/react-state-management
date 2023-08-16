@@ -19,4 +19,4 @@ export const createStore = (initialState) => {
   };
 };
 
-export const store = createStore({ count: 0 });
+export const store = createStore({ count1: 0, count2: 0 });
