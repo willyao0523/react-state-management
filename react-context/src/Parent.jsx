@@ -1,12 +1,15 @@
-import Component1 from "./Component1.jsx";
-import Component2 from "./Component2.jsx";
+
+import {DummyComponent, MemoedDummyComponent} from "./DummyComponent.jsx";
+import {ColorComponent, MemoedColorComponent} from "./ColorComponent.jsx";
 
 
 const Parent = () => {
-    return <>
-        <Component1 />
-        <Component2 />
-    </>
+    return <ul>
+        <li><DummyComponent /></li>
+        <li><MemoedDummyComponent /></li>
+        <li><ColorComponent /></li>
+        <li><MemoedColorComponent /></li>
+    </ul>
 }
 
 export default Parent;

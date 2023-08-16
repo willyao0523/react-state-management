@@ -1,16 +1,20 @@
-import {CountStateContext} from "./context"
+import {ColorContext} from "./context"
 
 import {useState} from "react";
 import Parent from "./Parent.jsx";
 
 
 function App() {
-    const [count, setCount] = useState(0);
+    const [color, setColor] = useState('red');
     return (
-        <CountStateContext.Provider value={{count, setCount}}>
+        <ColorContext.Provider value={color}>
+            <input
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+            />
             <Parent/>
-        </CountStateContext.Provider>
-    )
+        </ColorContext.Provider>
+    );
 }
 
 export default App
