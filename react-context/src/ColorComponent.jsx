@@ -1,5 +1,5 @@
 import {memo, useContext, useEffect, useRef} from "react";
-import {ColorContext} from "./context.js";
+import {ColorContext} from "./context.jsx";
 
 const ColorComponent = () => {
     const color = useContext(ColorContext);

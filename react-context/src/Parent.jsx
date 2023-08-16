@@ -1,12 +1,13 @@
-
-import {MemoedCounter1} from "./Counter1.jsx";
-import {MemoedCounter2} from "./Counter2.jsx";
+import CounterOne from "./CounterOne.jsx";
+import CounterTwo from "./CounterTwo.jsx";
 
 
 const Parent = () => {
     return <ul>
-        <MemoedCounter1 />
-        <MemoedCounter2 />
+        <CounterOne />
+        <CounterOne />
+        <CounterTwo />
+        <CounterTwo />
     </ul>
 }
 

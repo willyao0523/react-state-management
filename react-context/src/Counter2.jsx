@@ -1,5 +1,5 @@
 import {memo, useContext, useEffect, useRef} from "react";
-import {CountContext} from "./context"
+import {CountContext} from "./context.jsx"
 const Counter2 = () => {
     const {count2} = useContext(CountContext);
     const renderCount = useRef(1);

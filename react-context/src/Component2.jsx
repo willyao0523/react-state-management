@@ -1,6 +1,6 @@
 import {useContext} from "react";
 
-import {CountStateContext} from './context'
+import {CountStateContext} from './context.jsx'
 
 const Component2 = () => {
     const {count, setCount} =
