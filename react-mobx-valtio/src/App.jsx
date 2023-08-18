@@ -1,14 +1,14 @@
-import Timer from "./Timer";
 import TimerView from "./TimerView";
+import { increase } from "./valtioTimer";
+
+setInterval(() => {
+  increase();
+}, 1000);
 
 function App() {
-  const myTimer = new Timer();
-  setInterval(() => {
-    myTimer.increase();
-  }, 1000);
   return (
     <>
-      <TimerView timer={myTimer} />
+      <TimerView />
     </>
   );
 }

@@ -1,9 +1,6 @@
-import { observer } from "mobx-react";
+import { reset, useSecondsPasses } from "./valtioTimer";
 
-const TimerView = observer(({ timer }) => (
-  <button onClick={() => timer.reset()}>
-    Seconds passed: {timer.secondsPassed}
-  </button>
-));
-
-export default TimerView;
+export default function TimerView() {
+  const secondsPassed = useSecondsPasses();
+  return <button onClick={reset}>seconds passed: {secondsPassed}</button>;
+}
