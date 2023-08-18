@@ -1,7 +1,9 @@
-import { useTracked } from "./context";
+import { useDispatch } from "react-redux";
+import { useTrackedState } from "./context";
 
-const TextBox = () => {
-  const [state, dispatch] = useTracked();
+const TextBox = ({ showCount }) => {
+  const dispatch = useDispatch();
+  const state = useTrackedState();
   const setText = (text) => {
     dispatch({
       type: "SET_TEXT",
@@ -11,6 +13,7 @@ const TextBox = () => {
   return (
     <div>
       <input value={state.text} onChange={(e) => setText(e.target.value)} />{" "}
+      {showCount && <span>{state.count}</span>}
     </div>
   );
 };

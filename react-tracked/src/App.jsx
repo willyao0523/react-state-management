@@ -1,17 +1,18 @@
 import Counter from "./Counter";
 import TextBox from "./TextBox";
-import { Provider } from "./context";
+import { store } from "./context";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <>
-      <Provider>
+    <Provider store={store}>
+      <div>
         <Counter />
         <Counter />
         <TextBox />
         <TextBox />
-      </Provider>
-    </>
+      </div>
+    </Provider>
   );
 }
 
