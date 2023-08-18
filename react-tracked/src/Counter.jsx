@@ -1,13 +1,9 @@
 import { useTracked } from "./context";
 
 const Counter = () => {
-  //   const [state, setState] = useStateContext();
-  const [state, setState] = useTracked();
+  const [state, dispatch] = useTracked();
   const inc = () => {
-    setState((prev) => ({
-      ...prev,
-      count: prev.count + 1,
-    }));
+    dispatch({ type: "INC" });
   };
   return (
     <div>

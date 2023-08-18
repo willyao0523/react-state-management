@@ -1,10 +1,12 @@
 import { useTracked } from "./context";
 
 const TextBox = () => {
-  //   const [state, setState] = useStateContext();
-  const [state, setState] = useTracked();
+  const [state, dispatch] = useTracked();
   const setText = (text) => {
-    setState((prev) => ({ ...prev, text }));
+    dispatch({
+      type: "SET_TEXT",
+      text,
+    });
   };
   return (
     <div>
