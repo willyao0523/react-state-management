@@ -1,8 +1,8 @@
-import { useRecoilState } from "recoil";
-import { textState } from "./context";
+import { useAtom } from "jotai";
+import { textAtom } from "./jotaiContext";
 
 export default function TextInput() {
-  const [text, setText] = useRecoilState(textState);
+  const [text, setText] = useAtom(textAtom);
   return (
     <div>
       <input

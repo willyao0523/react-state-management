@@ -1,7 +1,7 @@
-import { useRecoilValue } from "recoil";
-import { charCountState } from "./context";
+import { useAtom } from "jotai";
+import { charCountAtom } from "./jotaiContext";
 
 export default function CharacterCount() {
-  const count = useRecoilValue(charCountState);
+  const [count] = useAtom(charCountAtom);
   return <>Character Count: {count}</>;
 }
