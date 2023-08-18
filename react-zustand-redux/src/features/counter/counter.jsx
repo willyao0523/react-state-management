@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "./counterSlice";
+import { useStore } from "../../app/zustandStore";
 
 export default function Counter() {
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
+  const count = useStore((state) => state.counter.value);
+  const { increment, decrement } = useStore((state) => state.counterActions);
+
   return (
     <div>
-      <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={increment}>Increment</button>
       <span>{count}</span>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 }
